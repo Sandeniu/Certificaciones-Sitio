@@ -1,0 +1,279 @@
+/*ROBOTO >>> font-family:'Roboto', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2? family = Roboto: ital, wght @ 0,100; 0,300; 0,400; 0,500; 0,700; 0,900; 1,100; 1,300; 1,400; 1,500; 1,700; 1,900 & display = swap');
+/*Montserrat >>> font-family: 'Montserrat', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2? familia = Montserrat: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 0,800; 0,900; 1,100; 1,200; 1,300; 1,400; 1,500; 1,600; 1,700; 1,800; 1,900 & display = swap');
+
+* {
+    outline: 1px solid red; /* Para visualizar todos los bordes de los elementos */
+}
+
+a {
+    text-decoration: none;
+    color: #27272b;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #27272b;
+    font-weight:normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.header, .nav, .main, .section .aside, .footer, .body{
+   /* border: 1px solid rgb(150, 150, 150);*/
+    background: #ffffff;
+}
+
+
+.grilla-Sector-1{
+    grid-area: header;
+}
+
+.grilla-Sector-2{
+    grid-area: nav;
+}
+
+.grilla-Sector-3{
+    grid-area: main;
+}
+
+.grilla-Sector-4{
+    grid-area: footer;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "nav nav nav nav"
+    "main main main main"
+    "main main main main"
+    "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto; 
+}
+
+
+header{
+    background-color:  #FAAA8D;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 0.5rem #50B2C0 solid;
+    border-bottom: 0.5rem #50B2C0 solid;
+    /*height: 5.0em; /*(120px aprox)*/
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    padding: 40px;
+    display: flex; /* Si lo necesitas para el comportamiento de flexbox */
+    justify-content: center; /* Alinea el contenido a la izquierda */
+    flex-direction: column; /* Para que el contenido esté en columna (pila) */
+}
+
+
+.main_SecIPCh, .main_SecHard, .main_SecSoft {
+    width: 80%;
+    align-self: center;
+    padding: 40px 0px;
+
+    display: flex;  
+    justify-content: center; 
+    flex-direction: column; 
+}
+
+
+/*
+.main_SecIPCh--DivTitu, .main_SecHard--DivTitu, .main_SecSoft--DivTitu{
+    display: flex; /* Ahora es Flexbox 
+    justify-content:flex-start; /* Centrará la tabla horizontalmente 
+    flex-direction: row;
+    align-items: center; /* Centrará la tabla verticalmente (si es necesario)
+    padding: 20px; /* Opcional, da espacio alrededor 
+    overflow-x: auto; /* Permite el scroll horizontal si es necesario 
+}
+*/
+
+.main-SIpchile-Dacordion, .main-SCert-Dacordion, .main-SSence-Dacordion{
+    width: 100%; /* Acordeón ocupa todo el ancho de la sección */
+    margin-top: 10px;
+}
+
+
+  /* Estilos de la tabla */
+  table {
+    border-collapse: collapse; /* Colapsa los bordes para un efecto limpio */
+    table-layout: fixed; /* Asegura que las celdas tengan el mismo ancho */
+    width: auto; /* Permite que la tabla se ajuste a su contenido */
+    /* width: 70%; /* La tabla ocupa el 100% del ancho disponible */
+}
+
+caption {
+    caption-side: top; /* Asegura que el caption esté arriba de la tabla */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+tr {
+    border-bottom:  0.1rem  solid rgb(150, 150, 150);
+}
+
+th, td {
+    /*border: 1px solid #000; /* Bordes para cada celda */
+    padding: 8px; /* Espaciado dentro de las celdas */
+    padding-right: 30px; /* Espacio a la derecha de cada celda */
+    text-align: left; /* Alinea el contenido a la izquierda */
+    word-wrap: break-word; /* Ajusta el texto para evitar desbordes */
+    
+}
+
+
+td:last-child, th:last-child {
+    padding-right: 0; /* Elimina el espacio en la última celda para que no haya un espacio extra al final */
+}
+
+
+/********************************************/
+/*       R  E  S  P  O  N  S  I  V  E       */
+/********************************************/
+
+
+/******    (1)     DISPOSITIVO XS ETRA-SMALL    *********/
+@media only screen and (min-width: 200px) and (max-width: 575px){
+    body{background: blueviolet;}
+    .header__divTitulo__h1{
+        font-size: 1rem;
+    }
+    .header__divInteractivo__buscador {
+        width: 60%;
+    }
+    .body--carousel-inner{
+        height: 150px;
+    }
+    .aside__form__mb-3__input,
+    .aside__form__mb-3__label,
+    .aside__form__mb-3__textarea{
+        width : 14rem;
+        padding-left: 2rem;
+        padding-right: 0rem;
+    }
+    .footer__fila1{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__divMenu__ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .footer__divMenu__ul__a, .footer__divSocial__divSiguenos__p{
+        font-size: 0.9rem;
+    }
+
+
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}
+
+/*******    (2)  DISPOSITIVO SM SMALL*********/
+@media only screen and (min-width: 576px) and (max-width: 767px){
+    body{background: rgb(71, 212, 255);}
+    .header__divTitulo__h1{
+        font-size: 1.5rem;
+    }
+    .body--carousel-inner{
+        height: 220px;
+    }
+    .footer__divSocial {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+        justify-items: center;
+    }
+    .footer__divMenu__ul__a, .footer__divCopyrigt__p {
+        color: blanchedalmond;
+        font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        font-weight: normal;
+    }
+    .footer__divMenu__ul{
+        padding: 0;
+    }
+
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/********     (3)   DISPOSITIVO MD MEDIANO      *********/
+@media only screen and (min-width: 768px) and (max-width: 991px){ 
+    body {
+        background: green;
+    }
+    .footer__divMenu__ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer__divMenu__ul__a, .footer__divSocial__divSiguenos__p {
+        font-size: 0.9rem;
+    }
+    .body--carousel-inner{
+        height: 300px;
+    }
+
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/*******     (4)   DISPOSITIVO LG LARGE      ********/
+@media only screen and (min-width: 992px) and (max-width: 1199px){ 
+    body {
+        background: blue;
+    }
+    .aside__form__mb-3__input,
+    .aside__form__mb-3__label,
+    .aside__form__mb-3__textarea{
+        width : 14rem;
+        padding-left: 2rem;
+        padding-right: 0rem;
+    }
+}
+
+/*******    (5)   DISPOSITIVO XL EXTRA-LARGE      ********/
+@media only screen and (min-width: 1200px) and (max-width: 1468px){ 
+    body {
+        background: #ffffff; 
+    }
+}
+
+
+/********  (6)   DISPOSITIVO XXL EXTRA/EXTRA-LARGE     *******/
+@media only screen and (min-width: 1200px) and (max-width: 1400px){ 
+    body {
+        background: #b3819e;
+    }
+}
+
+
+ /* Septiembre 2024 */
+ /* Haciendo que la tabla sea responsive*/
+ @media (max-width: 600px) {
+    table, th, td {
+        font-size: 12px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+    }
+}
