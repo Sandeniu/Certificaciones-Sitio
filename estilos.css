@@ -7,8 +7,8 @@
 
 
 * {
-    outline: 1px solid red; /* Para visualizar todos los bordes de los elementos */
-    /*outline: none; /*esta línea sobrescribe a la línea anterior*/
+    /*outline: 1px solid red; /* Para visualizar todos los bordes de los elementos */
+    outline: none; /*esta línea sobrescribe a la línea anterior*/
     border: none; 
     margin: 0;
     padding: 0;
@@ -36,10 +36,10 @@ body {
     /* text-align: center; */
     color:  #FB6900 ;
     font-family: "Albert Sans", sans-serif;
-    font-size: .55em;
+    font-size: 0.6rem;
     text-transform: uppercase;
     /* letter-spacing: 0.3rem; */
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -63,24 +63,25 @@ a{
 
 h1, h2, h3, h4, h5, h6{
     color: #27272b;
-    font-family:'Roboto', sans-serif;
+    font-family:'Roboto';
     font-weight:normal;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 h2{
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 
   /* Estilos de la tabla */
   table {
-    font-size: 1.3em;
+    font-size: 1.4em;
     border-collapse: collapse; /* Colapsa los bordes para un efecto limpio */
    /* table-layout: fixed; /* Asegura que las celdas tengan el mismo ancho */
     table-layout: auto; /* Asegura que las celdas tengan el mismo ancho */
     width:auto; /* Permite que la tabla se ajuste a su contenido */
+    text-transform: none;
 }
 
 tr {
@@ -94,7 +95,6 @@ th, td {
     word-wrap: break-word; /* Ajusta el texto para evitar desbordes */
     min-width: 50px; /* Ajusta según tus necesidades */
     max-width: 200px; /* Ajusta según tus necesidades */
-    
 }
 
 td:last-child, th:last-child {
@@ -135,7 +135,7 @@ td:last-child, th:last-child {
 }
 
 /** Secciones **/
-.main_SecIPCh, .main_SecHard, .main_SecSoft {
+.main_Sec {
     width: 80%;
     align-self: center;
     padding: 40px 0px;
@@ -146,7 +146,7 @@ td:last-child, th:last-child {
 }
 
 /** Div acordión **/
-.main-SIpchile-Dacordion, .main-SCert-Dacordion, .main-SSence-Dacordion{
+.main_Sec1-DivAco, .main_Sec2-DivAco, .main_Sec3-DivAco{
     width: 100%; /* Acordeón ocupa todo el ancho de la sección */
     margin-top: 10px;
 }
