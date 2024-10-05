@@ -10,8 +10,8 @@
     /*outline: 1px solid red; /* Para visualizar todos los bordes de los elementos */
     outline: none; /*esta línea sobrescribe a la línea anterior*/
     border: none; 
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     list-style: none; /* Quitar viñetas de las listas*/
     text-decoration: none;  /* Quitar subrayado de los enlaces*/
@@ -34,24 +34,44 @@ body {
     grid-template-rows: auto; 
 
     /* text-align: center; */
-    color:  #FB6900 ;
     font-family: "Albert Sans", sans-serif;
     font-size: 0.6rem;
     text-transform: uppercase;
     /* letter-spacing: 0.3rem; */
     font-weight: 500;
     text-decoration: none;
+    padding: 70px;
 }
 
-header{
-    background-color:  #FAAA8D;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    border-top: 0.5rem #50B2C0 solid;
-    border-bottom: 0.5rem #50B2C0 solid;
-    /*height: 5.0em; /*(120px aprox)*/
+header, nav, main, footer{
     display: flex;
+    align-items: center;
     justify-content: center;
+}
+
+header{padding: 25px 0px;}
+nav{padding-bottom: 15px;}
+
+main {
+    padding: 0px 40px;
+    padding-bottom: 40px; 
+    flex-direction: column;
+}
+
+footer{
+    background-color: #3D3A4B;
+    height: 100px;
+    color: #F9E0CE;
+    font-size: 0.7rem;
+}
+
+hr{
+    background-color: rgba(117,159,204,5);
+    height: 2px;
+    border: none;
+    margin: 0px; 
+    width: 70%;
+    opacity: .5;
 }
 
 a{
@@ -67,39 +87,44 @@ h1, h2, h3, h4, h5, h6{
     font-weight:normal;
     letter-spacing: 1px;
     text-transform: uppercase;
-}
-
-h2{
-    font-size: 2.5em;
+    margin: 0px;
 }
 
 
   /* Estilos de la tabla */
   table {
     font-size: 1.4em;
-    border-collapse: collapse; /* Colapsa los bordes para un efecto limpio */
-   /* table-layout: fixed; /* Asegura que las celdas tengan el mismo ancho */
-    table-layout: auto; /* Asegura que las celdas tengan el mismo ancho */
-    width:auto; /* Permite que la tabla se ajuste a su contenido */
+    border-collapse: collapse; 
+    table-layout: auto; /*celdas se ajustan al contenido */
+    width:auto; /* tabla se ajusta a su contenido */
     text-transform: none;
 }
 
-tr {
-    border-bottom:  0.1rem  solid rgb(150, 150, 150);
-}
+tr {border-bottom:  0.1rem  solid rgb(150, 150, 150);}
 
 th, td {
-    /*border: 1px solid #000; /* Bordes para cada celda */
-    padding: 8px 30px 8px 8px; /* Espaciado dentro de las celdas */
-    text-align: left; /* Alinea el contenido a la izquierda */
+    padding: 8px 30px 8px 8px; 
+    text-align: left; 
     word-wrap: break-word; /* Ajusta el texto para evitar desbordes */
-    min-width: 50px; /* Ajusta según tus necesidades */
-    max-width: 200px; /* Ajusta según tus necesidades */
+    min-width: 50px; 
+    max-width: 200px; 
+    background-color: rgba(249,224,206,0.1) !important;
 }
 
 td:last-child, th:last-child {
     padding-right: 0; /* Elimina el espacio en la última celda para que no haya un espacio extra al final */
 }
+
+th{font-weight: 500;}
+
+td{font-weight: 300;}
+
+spam{
+    font-size: 11; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: none;
+}
+
 
 .grilla-Sector-1{
     grid-area: header;
@@ -118,54 +143,56 @@ td:last-child, th:last-child {
 }
 
 .header, .nav, .main, .section .aside, .footer, .body{
-    /* border: 1px solid rgb(150, 150, 150);*/
      background: #ffffff;
  }
 
-.main {
-    padding: 40px;
-    display: flex; /* Si lo necesitas para el comportamiento de flexbox */
-    justify-content: center; /* Alinea el contenido a la izquierda */
-    flex-direction: column; /* Para que el contenido esté en columna (pila) */
-}
-
-.button{
-    font-size: .65em ;
-    font-family: "Albert Sans", sans-serif;
-}
 
 /** Secciones **/
 .main_Sec {
-    width: 80%;
+    width: 60%;
     align-self: center;
-    padding: 40px 0px;
-
     display: flex;  
     justify-content: center; 
     flex-direction: column; 
 }
 
-/** Div acordión **/
-.main_Sec1-DivAco, .main_Sec2-DivAco, .main_Sec3-DivAco{
-    width: 100%; /* Acordeón ocupa todo el ancho de la sección */
-    margin-top: 10px;
+.main:nth-child(even){   /*hijos de indice par (2,4,6 etc) de main*/
+    padding: 40px 0px;
 }
 
-/*
-.main_SecIPCh--DivTitu, .main_SecHard--DivTitu, .main_SecSoft--DivTitu{
-    display: flex; /* Ahora es Flexbox 
-    justify-content:flex-start; /* Centrará la tabla horizontalmente 
-    flex-direction: row;
-    align-items: center; /* Centrará la tabla verticalmente (si es necesario)
-    padding: 20px; /* Opcional, da espacio alrededor 
-    overflow-x: auto; /* Permite el scroll horizontal si es necesario 
+/** Div acordión **/
+.main_Sec-DivAco{
+    width: 100%; /* Acordeón ocupa todo el ancho de la sección */
 }
-*/
+
+.h2 {
+    color: #FC9A53;
+    font-size: 2.1em;
+    margin: 0px;
+    padding-top: 30px; 
+    padding-bottom: 10px; 
+
+}
+
+.accordion-header{
+    font-size: 2.5em 
+}
 
 .img_lupa{
     width: 30px; 
     height: 30px;
+    background-color: rgba(249,224,206,0.1);
 }
+
+.accordion-body {background-color: rgba(249,224,206,0.1);}
+
+.button{
+    font-size: .65em ;
+    font-family: "Albert Sans", sans-serif;
+    padding:10px;
+}
+
+
 
 /********************************************/
 /*       R  E  S  P  O  N  S  I  V  E       */
