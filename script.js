@@ -1,4 +1,4 @@
-// ------------------------- POPUP CON VENTANA CENTRADA -----------------------------------
+// ------------------------- POPUP PAR MOSTRAR LOS CERTIVICADOS EN VENTANA CENTRADA-----------------------------------
 
 // Función para abrir ventanas emergentes centradas
 function openPopup(url) {
@@ -9,7 +9,7 @@ function openPopup(url) {
     const left = (window.innerWidth - popupWidth) / 2 + window.screenX;
     const top = (window.innerHeight - popupHeight) / 2 + window.screenY;
 
-    // Abrir la ventana emergente centrada sin título
+    // Abrir ventana emergente para la url clicleada centrada sin título
     window.open(
         url,
         '', // Título vacío para evitar que se muestre el nombre del archivo
@@ -17,13 +17,19 @@ function openPopup(url) {
     );
 }
 
-// Seleccionar todos los enlaces que tienen la clase 'popup-link'
+// Popup donde se despliega el certificado: Seleccionar todos los enlaces que tienen la clase 'popup-link'
 const links = document.querySelectorAll('a.MiPopup');
 
-// Asignar evento de click a cada enlace
+// Menú Haburguesa: Asignar evento de click a cada enlace
 links.forEach(link => {
-    link.addEventListener('click', function(event) {
+    link.addEventListener('click', function (event) {
         event.preventDefault(); // Evitar la navegación estándar del enlace
         openPopup(this.href); // Abrir la ventana emergente centrada
     });
 });
+
+// Función para visualizar y ocultar barra de menú en pantallas pequeñas
+function toggleMenu() {
+    var menu = document.getElementById('nav-menu');
+    menu.classList.toggle('show');
+}

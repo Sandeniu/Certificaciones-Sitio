@@ -6,333 +6,382 @@
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+/********************************* Estilos Generales ****************************************************/
+
 * {
-    /*outline: 1px solid red; /* Para visualizar todos los bordes de los elementos */
-    outline: none; /*esta línea sobrescribe a la línea anterior*/
-    border: none; 
+    /* bordear contenedores para detectar desbordes e irregularidades  */
+    outline: 1px solid red; 
+
+    /*esta línea sobrescribe a la línea anterior*/
+    outline: none;
+
+    border: none;
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
-    list-style: none; /* Quitar viñetas de las listas*/
-    text-decoration: none;  /* Quitar subrayado de los enlaces*/
+
+  
+    list-style: none;
+    
+    /* Quitar viñetas de las listas*/
+    text-decoration: none;
+    
+    /* Quitar subrayado de los enlaces*/
     border: none;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    /*permite incluir el relleno y el borde en el ancho 
-                               y alto total de un elemento*/
+    
+    /*permite incluir el relleno y el borde en el ancho y alto total de un elemento*/
+    box-sizing: border-box;
+
+    /* limita el contenido a no ocupar más allá del 100% */
+    max-width: 100%;
 }
 
-body {
+html {
+    /* 1rem = 10px
+       Explicación:
+       1) fonsize por default de html = 16px 
+          pero queremos establecerlo en 10px
+       2) para ello se realiza el cálculo (10/16) = 0.625
+       3) 10px es un 62.5% del font-size por default
+       4) Así que establecemos el fontsize en 62.5x
+       5) Por lo tanto 1rem ahora será 10px*/
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1rem;
+    font-family: "Albert Sans", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0px !important;
+    border: solid 1px rgb(0, 0, 0, 0.2);
+    box-shadow: rgb(150, 150, 150) 3px 3px 5px;
+
+     /*divide el texto largo en líneas nuevas (usar una de las 2, pero ahora dejaré las 2*/
+     word-break: break-word;
+     overflow-wrap: break-word;
+
+    /* Evita el desbordamiento horizontal */
+    overflow-x: hidden; 
+}
+
+/* Div a continuación del body, contendrá toda la página */
+.divBody {
+    
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
     "header header header header"
     "nav nav nav nav"
     "main main main main"
     "main main main main"
+    "main main main main"
     "footer footer footer footer";
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto; 
-
-    /* text-align: center; */
-    font-family: "Albert Sans", sans-serif;
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    /* letter-spacing: 0.3rem; */
-    font-weight: 500;
-    text-decoration: none;
-    padding: 70px;
+    grid-template-rows: auto;
+    
+    margin: 5rem;
+    /* este borde es necesario un borde para poder aplicar margin en la caja */
+    /* border: #f5f4fc 1px solid;*/
+    border-radius: 5px;
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
-header, nav, main, footer{
+.grilla-Sector-1 {
+    grid-area: header;
+}
+
+.grilla-Sector-2 {
+    grid-area: nav;
+}
+
+.grilla-Sector-3 {
+    grid-area: main;
+}
+
+.grilla-Sector-4 {
+    grid-area: footer;
+}
+
+/********************************* Fin Estilos Generales *********************************************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #27272b;
+    font-family: 'Roboto';
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+
+/* Estilos de la tabla */
+table {
+    font-size: 1rem;
+    border-collapse: collapse;
+    text-transform: none;
+
+    /*celdas se ajustan al contenido */
+    table-layout: auto;
+
+    /* tabla se ajusta a su contenido */
+    width: auto;
+}
+
+tr {
+    border-bottom: 0.1rem solid rgb(150, 150, 150);
+}
+
+th,
+td {
+    padding: 0.8rem;
+    padding-right: 3rem;
+    text-align: left;
+    word-wrap: break-word;
+    /* Ajusta el texto para evitar desbordes */
+    min-width: 5rem;
+    max-width: 20rem;
+    background-color: rgba(249, 224, 206, 0.1) !important;
+    font-size: 0.9rem;
+}
+
+th {
+    font-weight: 500;
+}
+
+td {
+    font-weight: 300;
+}
+
+td:last-child,
+th:last-child {
+    padding-right: 0;
+    /* Elimina el espacio en la última celda para que no haya un espacio extra al final */
+}
+
+header,
+nav,
+main,
+aside,
+footer {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-header{padding: 25px 0px;}
-nav{padding-bottom: 15px;}
-
-main {
-    padding: 0px 40px;
-    padding-bottom: 40px; 
+.header {
+    height: 6rem;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-footer{
-    background-color: #3D3A4B;
-    height: 100px;
-    color: #F9E0CE;
-    font-size: 0.7rem;
+.header_DivTitulo{
+    margin: auto 0; /* Esto aplicará margen automático arriba y abajo */
 }
 
-hr{
-    background-color: rgba(117,159,204,5);
-    height: 2px;
+hr {
+    background-color: #62BBC1;
     border: none;
-    margin: 0px; 
-    width: 70%;
-    opacity: .5;
+    height: 0.5rem;
+    /* Asegura que ocupe todo el ancho*/
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.9;
 }
 
-a{
-    vertical-align: middle;
-    position: relative;
-    top: 0.3rem;
-    color: #27272b;
+/********************************* Menú Nav *********************************************/
+
+.nav {
+    height: 2.8rem;
+    align-items: center;
+    /* justify-content: end; */
 }
 
-h1, h2, h3, h4, h5, h6{
-    color: #27272b;
-    font-family:'Roboto';
-    font-weight:normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 0px;
+/* Es el nav con otro nombre,pero aeste se le pone el estilo */
+.navbar {
+    background: #C66082;
+    padding: 10px;
+    padding: 0;
 }
 
-
-  /* Estilos de la tabla */
-  table {
-    font-size: 1.4em;
-    border-collapse: collapse; 
-    table-layout: auto; /*celdas se ajustan al contenido */
-    width:auto; /* tabla se ajusta a su contenido */
-    text-transform: none;
+.navbar-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-tr {border-bottom:  0.1rem  solid rgb(150, 150, 150);}
-
-th, td {
-    padding: 8px 30px 8px 8px; 
-    text-align: left; 
-    word-wrap: break-word; /* Ajusta el texto para evitar desbordes */
-    min-width: 50px; 
-    max-width: 200px; 
-    background-color: rgba(249,224,206,0.1) !important;
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-td:last-child, th:last-child {
-    padding-right: 0; /* Elimina el espacio en la última celda para que no haya un espacio extra al final */
+.nav-menu li {
+    padding: 0;
+    margin: 0;
+    padding: 0 1rem;
 }
 
-th{font-weight: 500;}
-
-td{font-weight: 300;}
-
-spam{
-    font-size: 11; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-transform: none;
+.nav-menu li a {
+    color: #524964;
+    text-decoration: none;
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    color: white;
+    width: 100%;
 }
 
-
-.grilla-Sector-1{
-    grid-area: header;
+.nav-menu li a:hover {
+    /* background-color: #F9E0CE; */
+    background-color: #eb93b0;
+    opacity: 0.7;
+    /* border-radius: 0.5rem; */
+    color: #3D3A4B;
 }
 
-.grilla-Sector-2{
-    grid-area: nav;
+/* clase declarada en el elemento <a> del menú*/
+.escalar {
+    display: inline-block;
+    /* Asegúrate de que el elemento se pueda escalar */
+    transition: transform 0.3s ease;
+    /* Para que el cambio sea suave */
 }
 
-.grilla-Sector-3{
-    grid-area: main;
+.escalar:hover {
+    transform: scale(1.05);
+    /* Escala el elemento al 120% de su tamaño original */
 }
 
-.grilla-Sector-4{
-    grid-area: footer;
+.hamburger {
+    display: none;
+    font-size: 2.1rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding-right: 1rem;
 }
 
-.header, .nav, .main, .section .aside, .footer, .body{
-     background: #ffffff;
- }
+/********************************* Fin Menú Nav *********************************************/
 
+/********************************* Elementos Rutilizables *********************************************/
+
+
+.main {
+    margin: 2rem 0;
+    padding: 0 0.5rem;
+
+    /*en su condición de parent de sectiones*/
+    flex-direction: column;
+
+    /*En su condición de Child de Grilla*/
+    justify-self: center;
+}
 
 /** Secciones **/
 .main_Sec {
     width: 60%;
     align-self: center;
-    display: flex;  
-    justify-content: center; 
-    flex-direction: column; 
-}
-
-.main:nth-child(even){   /*hijos de indice par (2,4,6 etc) de main*/
-    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.2rem 0.75rem
 }
 
 /** Div acordión **/
-.main_Sec-DivAco{
-    width: 100%; /* Acordeón ocupa todo el ancho de la sección */
+.Dacordion {
+    width: 100%;
+    /* Acordeón ocupa todo el ancho de la sección */
 }
 
-.h2 {
+.main_Sec_DivH--h2{
     color: #FC9A53;
-    font-size: 2.1em;
-    margin: 0px;
-    padding-top: 30px; 
-    padding-bottom: 10px; 
-
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
+    /* padding-top: 1.5rem; */
+    padding-left: 0.2rem;
 }
 
-.accordion-header{
-    font-size: 2.5em 
-}
-
-.img_lupa{
-    width: 30px; 
-    height: 30px;
-    background-color: rgba(249,224,206,0.1);
-}
-
-.accordion-body {background-color: rgba(249,224,206,0.1);}
-
-.button{
-    font-size: .65em ;
+.Dacordion_DItem_h2{
     font-family: "Albert Sans", sans-serif;
-    padding:10px;
+}
+
+.Dacordion_DItem_h2--button {
+    font-size: 1rem;
+    font-family: "Albert Sans", sans-serif;
+    padding: 0.6rem;
+}
+
+.Dacordion_DItem_Dstart--Dcontent {
+    background-color: rgba(249, 224, 206, 0.1);
+    padding: 0.7rem;
 }
 
 
+.img_lupa {
+    width: 2.2rem;
+    height: 2.2rem;
+    /* background-color: rgba(249, 224, 206, 0.1); */
+    background: transparent;
+    
+}
 
-/********************************************/
-/*       R  E  S  P  O  N  S  I  V  E       */
-/********************************************/
+.footer {
+    background-color: #3D3A4B;
+    color: #F9E0CE;
+    font-size: 1rem;
+    width: 100%;
+    min-height: 4rem;
+    padding: 1.5rem;
+}
+
+.footer_p {
+    text-align: center;
+    margin: 0;
+}
+
+.footer_p_spa {
+    font-size: 0.85rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: none;
+}
+
+
+/****************************** BREACKPOINT  DE BOOSTRAP ********************************************/
 
 
 /******    (1)     DISPOSITIVO XS ETRA-SMALL    *********/
-@media only screen and (min-width: 200px) and (max-width: 575px){
-    body{background: blueviolet;}
-    .header__divTitulo__h1{
-        font-size: 1rem;
-    }
-    .header__divInteractivo__buscador {
-        width: 60%;
-    }
-    .body--carousel-inner{
-        height: 150px;
-    }
-    .aside__form__mb-3__input,
-    .aside__form__mb-3__label,
-    .aside__form__mb-3__textarea{
-        width : 14rem;
-        padding-left: 2rem;
-        padding-right: 0rem;
-    }
-    .footer__fila1{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .footer__divMenu__ul{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-    }
-    .footer__divMenu__ul__a, .footer__divSocial__divSiguenos__p{
-        font-size: 0.9rem;
-    }
-
-
-    /*productos.html*/
-    .prod__aside__div1--divMenu{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
+@media only screen and (min-width: 200px) and (max-width: 576px){
 }
 
-/*******    (2)  DISPOSITIVO SM SMALL*********/
-@media only screen and (min-width: 576px) and (max-width: 767px){
-    body{background: rgb(71, 212, 255);}
-    .header__divTitulo__h1{
-        font-size: 1.5rem;
-    }
-    .body--carousel-inner{
-        height: 220px;
-    }
-    .footer__divSocial {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        align-items: center;
-        justify-items: center;
-    }
-    .footer__divMenu__ul__a, .footer__divCopyrigt__p {
-        color: blanchedalmond;
-        font-family: 'Roboto', Arial, Helvetica, sans-serif;
-        font-size: 0.8rem;
-        letter-spacing: 1px;
-        font-weight: normal;
-    }
-    .footer__divMenu__ul{
-        padding: 0;
-    }
-
-    /*productos.html*/
-    .prod__aside__div1--divMenu{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+/*******    (2)  DISPOSITIVO SM SMALL        *********/
+@media only screen and (min-width: 200px) and (max-width: 576px){
 }
 
 /********     (3)   DISPOSITIVO MD MEDIANO      *********/
-@media only screen and (min-width: 768px) and (max-width: 991px){ 
-    body {
-        background: green;
-    }
-    .footer__divMenu__ul{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .footer__divMenu__ul__a, .footer__divSocial__divSiguenos__p {
-        font-size: 0.9rem;
-    }
-    .body--carousel-inner{
-        height: 300px;
-    }
-
-    /*productos.html*/
-    .prod__aside__div1--divMenu{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+@media only screen and (min-width: 577px) and (max-width: 768px){ 
 }
 
 /*******     (4)   DISPOSITIVO LG LARGE      ********/
-@media only screen and (min-width: 992px) and (max-width: 1199px){ 
-    body {
-        background: blue;
-    }
-    .aside__form__mb-3__input,
-    .aside__form__mb-3__label,
-    .aside__form__mb-3__textarea{
-        width : 14rem;
-        padding-left: 2rem;
-        padding-right: 0rem;
-    }
+@media only screen and (min-width: 769px) and (max-width: 992px){ 
 }
 
 /*******    (5)   DISPOSITIVO XL EXTRA-LARGE      ********/
-@media only screen and (min-width: 1200px) and (max-width: 1468px){ 
-    body {
-        background: #ffffff; 
-    }
+@media only screen and (min-width: 993px) and (max-width: 1200px){
 }
-
 
 /********  (6)   DISPOSITIVO XXL EXTRA/EXTRA-LARGE     *******/
-@media only screen and (min-width: 1200px) and (max-width: 1400px){ 
-    body {
-        background: #b3819e;
-    }
-}
-
-
- /* Septiembre 2024 */
- /* Haciendo que la tabla sea responsive*/
- @media (max-width: 600px) {
-    table, th, td {
-        font-size: 12px; /* Reduce el tamaño de fuente en pantallas pequeñas */
-    }
+@media only screen and (min-width: 1201px) and (max-width: 1400px){
 }
