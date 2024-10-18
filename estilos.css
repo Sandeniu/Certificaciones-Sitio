@@ -35,39 +35,50 @@
     max-width: 100%;
 }
 
+
 html {
     /* 1rem = 10px
-       Explicación:
-       1) fonsize por default de html = 16px 
-          pero queremos establecerlo en 10px
-       2) para ello se realiza el cálculo (10/16) = 0.625
-       3) 10px es un 62.5% del font-size por default
-       4) Así que establecemos el fontsize en 62.5x
-       5) Por lo tanto 1rem ahora será 10px*/
-    font-size: 62.5%;
+    Explicación:
+    1) fonsize por default de html = 16px 
+    pero queremos establecerlo en 10px
+    2) para ello se realiza el cálculo (10/16) = 0.625
+    3) 10px es un 62.5% del font-size por default
+    4) Así que establecemos el fontsize en 62.5x
+    5) Por lo tanto 1rem ahora será 10px*/
+    font-size: 62.5%; 
 }
 
 body{
-    font-size: 1rem;
+    /* color: #FC9A53; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+
+    min-height: 100%; /* Asegura que body ocupe toda la altura disponible */
+    font-size: 1.2rem;
     font-family: "Albert Sans", sans-serif;
     text-transform: uppercase;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 0px !important;
-    border: solid 1px rgb(0, 0, 0, 0.2);
-    box-shadow: rgb(150, 150, 150) 3px 3px 5px;
 
-     /*divide el texto largo en líneas nuevas (usar una de las 2, pero ahora dejaré las 2*/
-     word-break: break-word;
-     overflow-wrap: break-word;
-
-    /* Evita el desbordamiento horizontal */
-    overflow-x: hidden; 
 }
 
-/* Div a continuación del body, contendrá toda la página */
+
+/* Div Post-body, Contenedor que envuelve todo el contenido */
 .divBody {
-    
+
+    /* background-color:antiquewhite; */
+    flex-grow: 1; /* Esto hará que el divBody ocupe todo el espacio disponible */
+    min-width: 60%;
+
+    /*
+    min-width: 60%;
+    max-width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+    min-height: 80%;
+    */
+
+    /************* Gestión de Layout como Padre de contenedore de la página************/
     display: grid;
     grid-template-areas:
     "header header header header"
@@ -77,11 +88,10 @@ body{
     "main main main main"
     "footer footer footer footer";
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
+
+    /* grid-template-rows: auto; */
+    grid-template-rows: auto 1fr auto; /* Ajusta el tamaño del main dinámicamente */
     
-    margin: 5rem;
-    /* este borde es necesario un borde para poder aplicar margin en la caja */
-    /* border: #f5f4fc 1px solid;*/
     border-radius: 5px;
     box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.2);
 }
@@ -119,14 +129,13 @@ h6 {
 
 h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 
 
 /* Estilos de la tabla */
 table {
-    font-size: 1rem;
     border-collapse: collapse;
     text-transform: none;
 
@@ -151,7 +160,6 @@ td {
     min-width: 5rem;
     max-width: 20rem;
     background-color: rgba(249, 224, 206, 0.1) !important;
-    font-size: 0.9rem;
 }
 
 th {
@@ -179,7 +187,7 @@ footer {
 }
 
 .header {
-    height: 6rem;
+    height: 8rem;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -191,18 +199,17 @@ footer {
 hr {
     background-color: #62BBC1;
     border: none;
-    height: 0.5rem;
+    height: 1rem;
     /* Asegura que ocupe todo el ancho*/
     width: 100%;
     margin: 0;
     padding: 0;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 /********************************* Menú Nav *********************************************/
 
 .nav {
-    height: 2.8rem;
     align-items: center;
     /* justify-content: end; */
 }
@@ -210,8 +217,6 @@ hr {
 /* Es el nav con otro nombre,pero aeste se le pone el estilo */
 .navbar {
     background: #C66082;
-    padding: 10px;
-    padding: 0;
 }
 
 .navbar-container {
@@ -237,41 +242,40 @@ hr {
 .nav-menu li a {
     color: #524964;
     text-decoration: none;
-    padding: 0.8rem;
-    font-size: 0.8rem;
     color: white;
     width: 100%;
 }
 
 .nav-menu li a:hover {
-    /* background-color: #F9E0CE; */
     background-color: #eb93b0;
     opacity: 0.7;
-    /* border-radius: 0.5rem; */
     color: #3D3A4B;
 }
 
 /* clase declarada en el elemento <a> del menú*/
 .escalar {
-    display: inline-block;
+    padding: 1rem;
     /* Asegúrate de que el elemento se pueda escalar */
-    transition: transform 0.3s ease;
+    display: inline-block;
+
     /* Para que el cambio sea suave */
+    transition: transform 0.3s ease;
 }
 
 .escalar:hover {
-    transform: scale(1.05);
     /* Escala el elemento al 120% de su tamaño original */
+    transform: scale(1.05);
 }
 
+/*button ubicado en el nav*/
 .hamburger {
-    display: none;
+    display: block;
     font-size: 2.1rem;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
-    padding-right: 1rem;
+    padding: 0 2rem;
 }
 
 /********************************* Fin Menú Nav *********************************************/
@@ -280,6 +284,7 @@ hr {
 
 
 .main {
+    /* background-color:aqua; */
     margin: 2rem 0;
     padding: 0 0.5rem;
 
@@ -288,11 +293,19 @@ hr {
 
     /*En su condición de Child de Grilla*/
     justify-self: center;
+
+
+    /*
+    grid-area: main;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total
+    height: 100%; /* Esto asegura que el main ocupe toda la altura disponible */
 }
 
 /** Secciones **/
 .main_Sec {
-    width: 60%;
+    width: 70%;
     align-self: center;
     display: flex;
     justify-content: center;
@@ -308,7 +321,7 @@ hr {
 
 .main_Sec_DivH--h2{
     color: #FC9A53;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     padding-bottom: 0.5rem;
     /* padding-top: 1.5rem; */
     padding-left: 0.2rem;
@@ -319,9 +332,9 @@ hr {
 }
 
 .Dacordion_DItem_h2--button {
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-family: "Albert Sans", sans-serif;
-    padding: 0.6rem;
+    padding: 1rem;
 }
 
 .Dacordion_DItem_Dstart--Dcontent {
@@ -353,7 +366,7 @@ hr {
 }
 
 .footer_p_spa {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: none;
 }
