@@ -168,6 +168,7 @@ th {
 
 td {
     font-weight: 300;
+    line-height: 1.55rem; /* Aumenta o reduce según prefieras */
 }
 
 td:last-child,
@@ -217,6 +218,7 @@ hr {
 /* Es el nav con otro nombre,pero aeste se le pone el estilo */
 .navbar {
     background: #C66082;
+    padding: 5px 10px;
 }
 
 .navbar-container {
@@ -269,7 +271,7 @@ hr {
 
 /*button ubicado en el nav*/
 .hamburger {
-    display: block;
+    display: none;
     font-size: 2.1rem;
     background: none;
     border: none;
@@ -285,7 +287,7 @@ hr {
 
 .main {
     /* background-color:aqua; */
-    margin: 2rem 0;
+    margin: 2.5rem 0;
     padding: 0 0.5rem;
 
     /*en su condición de parent de sectiones*/
