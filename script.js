@@ -20,6 +20,8 @@ function openPopup(url) {
 // Popup donde se despliega el certificado: Seleccionar todos los enlaces que tienen la clase 'popup-link'
 const links = document.querySelectorAll('a.MiPopup');
 
+// ------------------------- GESTIÓN MENÚ HAMBURGUESA-----------------------------------
+
 // Menú Haburguesa: Asignar evento de click a cada enlace
 links.forEach(link => {
     link.addEventListener('click', function (event) {
