@@ -9,43 +9,32 @@
 /********************************* Estilos Generales ****************************************************/
 
 * {
-    /* bordear contenedores para detectar desbordes e irregularidades  */
-    outline: 1px solid red; 
-
-    /*esta línea sobrescribe a la línea anterior*/
-    outline: none;
-
+    outline: 1px solid red;  /* Colorcito de bordes para detectar desbordes */
+    outline: none;             /* Esta línea sobrescribe a la línea anterior */
     border: none;
     margin: 0px;
     padding: 0px;
-
-  
     list-style: none;
-    
-    /* Quitar viñetas de las listas*/
-    text-decoration: none;
-    
-    /* Quitar subrayado de los enlaces*/
-    border: none;
-    
-    /*permite incluir el relleno y el borde en el ancho y alto total de un elemento*/
-    box-sizing: border-box;
-
-    /* limita el contenido a no ocupar más allá del 100% */
-    max-width: 100%;
+    text-decoration: none;     /* Quitar viñetas de las listas */
+    border: none;              /* Quitar subrayado de los enlaces */
+    box-sizing: border-box;    /* incluir relleno y borde por defecto en medidas de elementos */
+    max-width: 100%;           /* limita el contenido a no ocupar más allá del 100% */
 }
 
-
 html {
-    /* 1rem = 10px
-    Explicación:
-    1) fonsize por default de html = 16px 
-    pero queremos establecerlo en 10px
-    2) para ello se realiza el cálculo (10/16) = 0.625
-    3) 10px es un 62.5% del font-size por default
-    4) Así que establecemos el fonts ize en 62.5x
-    5) Por lo tanto 1rem ahora será 10px*/
-    font-size: 62.5%; 
+
+    /*1rem tendra el tamaño de 10px */
+
+    /* Explicación: */
+
+    /*    1) fonsize por default de html = 16px */
+    /*        pero queremos establecerlo en 10px */
+    /*    2) para ello se realiza el cálculo (10/16) = 0.625 */
+    /*    3) 10px es un 62.5% del font-size por default */
+    /*    4) Así que establecemos el fonts size en 62.5x */
+    /*    5) Por lo tanto 1rem ahora será 10px */
+
+    font-size: 62.5%;
 }
 
 body{
@@ -65,18 +54,8 @@ body{
 
 /* Div Post-body, Contenedor que envuelve todo el contenido */
 .divBody {
-
-    /* background-color:antiquewhite; */
     flex-grow: 1; /* Esto hará que el divBody ocupe todo el espacio disponible */
     min-width: 64%;
-
-    /*
-    min-width: 60%;
-    max-width: 100%;
-    margin: 0 auto;
-    flex-grow: 1;
-    min-height: 80%;
-    */
 
     /************* Gestión de Layout como Padre de contenedore de la página************/
     display: grid;
@@ -245,18 +224,13 @@ hr {
 /* Elemento <a> */
 .escalar {
     padding: .5rem;
-
-    /*Para asegurarse de que el elemento se pueda escalar*/
-    display: inline-block;
-
-    /* Para que el cambio sea suave*/
-    transition: transform 0.3s ease;
+    display: inline-block;              /* Para asegurarse de que el elemento se pueda escalar*/
+    transition: transform 0.3s ease;    /* Para que el cambio sea suave */
 }
 
 
 .escalar:hover {
-    /* Escala el elemento al 120% de su tamaño original*/
-    transform: scale(1.03);
+    transform: scale(1.03);              /* Escala el elemento al 120% de su tamaño original */
 }
 
 
@@ -302,7 +276,6 @@ hr {
 /** Div acordión **/
 .Dacordion {
     width: 100%;
-    /* Acordeón ocupa todo el ancho de la sección */
 }
 
 .main_Sec_DivH--h2{

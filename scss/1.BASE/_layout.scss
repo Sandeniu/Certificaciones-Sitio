@@ -1,0 +1,55 @@
+
+body{
+    /* color: #FC9A53; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+
+    min-height: 100%; /* Asegura que body ocupe toda la altura disponible */
+    font-size: 1.3rem;
+    font-family: "Albert Sans", sans-serif;
+    text-transform: uppercase;
+}
+
+
+/* Div que envuelve todo el contenido dentro del body*/
+.divBody {
+
+    // Configuración de child
+    flex-grow: 1;  // Este child ocupa todo el espacio disponible
+    min-width: 64%;
+
+ 
+
+    // Configuración del parent
+    border-radius: 5px;
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.2);
+
+    display: grid;
+    grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "main main main main"
+    "main main main main"
+    "main main main main"
+    "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr auto;  /* grid-template-rows: auto; Ajusta el tamaño del main dinámicamente */ 
+}
+
+.grilla-Sector-1 {
+    grid-area: header;
+}
+
+.grilla-Sector-2 {
+    grid-area: nav;
+}
+
+.grilla-Sector-3 {
+    grid-area: main;
+}
+
+.grilla-Sector-4 {
+    grid-area: footer;
+}

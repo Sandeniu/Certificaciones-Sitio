@@ -1,0 +1,83 @@
+
+
+// 2. Mapa para definir Estilos Dinámicos
+
+$styles: (
+  "body": (
+    "min-height": 100%
+  ),
+  ".divBody": (
+    "border-radius": none,
+    "box-shadow": none,
+    "min-width": 100%
+  ),
+  "header": (
+    "height": (
+      "sm": 6rem,
+      "md": 8rem,
+      "lg": 9rem,
+      "xl": 10rem,
+      "xxl": 12rem
+    )
+  ),
+  ".main": (
+    "margin": (
+      "sm": 1rem 0,
+      "md": 1.5rem 0,
+      "lg": 2rem 0,
+      "xl": 2.5rem 0,
+      "xxl": 3rem 0
+    )
+  ),
+  ".main_Sec": (
+    "width": (
+      "sm": 80%,
+      "md": 85%,
+      "lg": 90%,
+      "xl": 95%,
+      "xxl": 100%
+    )
+  ),
+  ".nav": (
+    "justify-content": end,
+    "line-height": normal
+  ),
+  ".nav-container": (
+    "justify-content": end,
+    "padding-right": 1rem
+  ),
+  ".nav-menu": (
+    "display": none,
+    "flex-direction": column,
+    "position": absolute,
+    "top": 2.5rem,
+    "right": 1.3rem,
+    "width": (
+      "sm": 25%,
+      "md": 30%,
+      "lg": 35%,
+      "xl": 40%,
+      "xxl": 45%
+    ),
+    "background-color": white,
+    "border-radius": 10px,
+    "align-items": normal
+  ),
+  ".nav-menu li": (
+    "text-align": right,
+    "padding": 1rem,
+    "border": 1px solid rgba(0, 0, 0, 0.1),
+    "box-shadow": 0 0 5px rgba(0, 0, 0, 0.1),
+    "border-top": none
+  ),
+  ".table": (
+    "display": flex,
+    "flex-direction": column
+  ),
+  ".table tbody tr": (
+    "display": flex,
+    "flex-direction": column,
+    "border": 1px solid #ddd,
+    "border-bottom": 0.1px solid rgba(61, 58, 75, 0.1)
+  )
+);

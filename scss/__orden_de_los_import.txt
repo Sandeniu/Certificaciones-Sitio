@@ -1,0 +1,28 @@
+
+estamos dentro del archivo  main.scss el cual consolida todos los fragmentos
+
+****Variables y mixins:
+@import 'variables';
+@import 'mixins';
+
+**** Reset y estilos globales
+@import 'reset';
+@import 'base';
+
+****Componentes
+@import 'header';
+@import 'buttons';
+@import 'forms';
+@import 'navigation';
+
+**** Componentes individuales 
+@import 'body'; 
+@import 'header'; 
+@import 'nav'; 
+@import 'main_section';
+
+**** Breakpoints y responsive
+@import 'responsive';
+
+**** Fragmentos CSS adicionales
+@import 'misc';

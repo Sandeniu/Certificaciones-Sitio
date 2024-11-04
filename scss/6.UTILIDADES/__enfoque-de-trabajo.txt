@@ -1,0 +1,7 @@
+
+
+Este enfoque de trabajo será el siguiente:
+
+    - Simplificar los breakpoints responsive usando un mapa y un mixin.
+    - Centralizar colores y fuentes para hacerlos reutilizables.
+    - Agrupar estilos por breakpoint para mayor claridad y mantenimiento.

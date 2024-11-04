@@ -1,0 +1,30 @@
+
+
+* {
+    outline: 1px solid red; //Colorcito de bordes para detectar desbordes
+    outline: none; //Esta línea sobrescribe a la línea anterior
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none; // Quitar viñetas de las listas
+    border: none;  // Quitar subrayado de los enlaces
+    box-sizing: border-box; // incluir relleno y borde por defecto en medidas de elementos
+    max-width: 100%; //  limita el contenido a no ocupar más allá del 100%
+}
+
+html {
+
+    // 1rem tendra el tamaño de 10px
+
+    // Explicación:
+
+    //    1) fonsize por default de html = 16px 
+    //       pero queremos establecerlo en 10px
+    //    2) para ello se realiza el cálculo (10/16) = 0.625
+    //    3) 10px es un 62.5% del font-size por default
+    //    4) Así que establecemos el fonts size en 62.5x
+    //    5) Por lo tanto 1rem ahora será 10px 
+
+    font-size: 62.5%;
+}

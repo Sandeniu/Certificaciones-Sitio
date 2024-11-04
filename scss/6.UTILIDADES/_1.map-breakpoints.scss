@@ -1,0 +1,13 @@
+
+// 1. Mapa para definir Breakpoints
+
+$breakpoints: (
+  sm: (min-width: 200px, max-width: 576px),
+  md: (min-width: 577px, max-width: 768px),
+  lg: (min-width: 769px, max-width: 992px),
+  xl: (min-width: 993px, max-width: 1200px),
+  xxl: (min-width: 1201px, max-width: 1400px),
+  // special: (min-width: 200px, max-width: 1000px) // breakpoint especial
+);
+
+
