@@ -1,8 +1,0 @@
-
-
-// 4. Generación Automática de Estilos para cada Breakpoint
-@each $breakpoint, $sizes in $breakpoints {
-    @media (min-width: map-get($sizes, min)) and (max-width: map-get($sizes, max)) {
-      @include apply-styles($breakpoint);
-    }
-  }

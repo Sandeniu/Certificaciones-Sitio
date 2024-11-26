@@ -1,0 +1,22 @@
+@import "./1.map-breakpoints";
+@import "./3.@mixin-aplicando-estilos";
+
+// // 4. Generación Automática de Estilos para cada Breakpoint
+// @each $breakpoint, $sizes in $breakpoints {
+//     @media (min-width: map-get($sizes, min)) and (max-width: map-get($sizes, max)) {
+//       @include apply-styles($breakpoint);
+//     }
+//   }
+
+
+// 4. Generación Automática de Estilos para cada Breakpoint
+
+@each $breakpoint, $sizes in $breakpoints {
+    @media (min-width: map-get($sizes, min-width)) and (max-width: map-get($sizes, max-width)) {
+        @include apply-styles($breakpoint); // se incluye el mixin apply-styles
+        @debug "Breakpoint: #{$breakpoint}"; // Debug del breakpoint actual
+    }
+}
+
+
+  

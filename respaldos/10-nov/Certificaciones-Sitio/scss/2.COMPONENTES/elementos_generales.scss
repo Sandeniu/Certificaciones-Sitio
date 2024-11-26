@@ -1,0 +1,62 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Estilos de la tabla */
+table {
+    border-collapse: collapse;
+    text-transform: none;
+
+    /*celdas se ajustan al contenido */
+    table-layout: auto;
+
+    /* tabla se ajusta a su contenido */
+    width: auto;
+}
+
+tr {
+    border-bottom: 0.1rem solid rgb(150, 150, 150);
+}
+
+th,
+td {
+    min-width: 5rem;
+    max-width: 20rem;
+    padding: 0.8rem;
+    padding-right: 3rem;
+
+    /* Ajusta el texto para evitar desbordes */
+    word-wrap: break-word;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8rem; /* interlineado */
+    
+    background-color: rgba(249, 224, 206, 0.1) !important;
+}
+
+td:last-child,
+th:last-child {
+    padding-right: 0;
+    /* Elimina el espacio en la última celda para que no haya un espacio extra al final */
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

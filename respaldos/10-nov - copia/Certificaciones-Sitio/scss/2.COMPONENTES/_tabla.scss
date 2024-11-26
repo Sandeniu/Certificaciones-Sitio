@@ -1,0 +1,137 @@
+
+//Div contenedor de las tablas
+.Dacordion_DItem_Dstart--Dcontent{
+  padding: 0 0.7rem;
+  flex-grow: 1; /* Permitir que las celdas crezcan */
+  flex-basis: 0; /* tamaño base = 0, permite el crecimiento flexible */ 
+}
+
+.Dtabla{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+table {
+  width: 95% !important;
+  border-collapse: collapse;
+  //margin-bottom: 1.5rem !important;
+  text-transform: none;
+
+  /*celdas se ajustan al contenido */
+  table-layout: auto;
+
+  /* tabla se ajusta a su contenido */
+  //width: auto;
+}
+
+//Sobreescritura de clase de boostrap
+.table:hover {
+  --bs-table-hover-bg: rgba(255, 243, 205, 0.3) !important;
+} 
+
+table tbody tr{
+  padding: 0 2rem;
+}
+
+th, td {
+  //border: 1px solid #b91818; // borde rojo para hacer pruebas
+  font-size: 1.3rem;
+  color: rgba(61, 58, 75, 0.9) !important;
+  text-align: left;
+  word-wrap: break-word;  /* Ajusta texto largo para evitar superposición*/
+  line-height: 1.6rem; /* interlineado */
+  vertical-align: top;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(61, 58, 75, 0.6);
+  border-bottom-width: 1px;
+}
+
+table thead th{
+  font-weight: 600;
+}
+
+table tbody td{
+  font-weight: 400;
+}
+
+.td_inicial{
+  color: #052c65 !important;
+}
+
+//Se sobreescribe clase de boostrap
+.table > :not(caption) > * > * {
+  padding: .8rem !important;
+}
+
+td:last-child,
+th:last-child {
+  /* Elimina el espacio en la última celda para que no haya un espacio extra al final */
+  padding-right: 0;
+}
+
+
+/**************************** @media ****************************/
+/**************************** @media ****************************/
+
+/*
+@media (max-width: 768px) {
+
+  //Div contenedor de las tablas
+.Dacordion_DItem_Dstart--Dcontent{
+   padding: 0.3rem;
+  }
+
+  .Dtabla:hover {
+    background-color: #fff3cd !important;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: flex;
+    flex-direction: column;
+     // display: block;
+  }
+  table {
+    align-items: center;
+    width:100%;
+  }
+
+
+  tbody{
+    align-items: center;
+    width: 100%;
+  }
+
+  table thead tr {
+      display: none; 
+    }
+    
+    table tbody tr{
+    width: 100%;
+    padding: 0 1rem;
+
+  } */
+
+
+
+//   th, td {
+//     /* Permite que la celda ocupe todo el ancho del tr */
+//     min-width: 100%;
+//     padding:.5rem 1rem .9rem 1rem !important;
+//     line-height: 1.7rem; /* interlineado */
+//   }
+
+// // boostrap sobrescribe el selector "td" y lo renombra ".table > ..." 
+// // llama al hijo de su hijo, el cual es td
+// .table > :not(caption) > * > * {
+//   padding: .5rem 0.3rem !important;
+// }
+
+//   td::before {
+//       content: attr(data-label);
+//       display: block;
+//       padding-bottom: .2rem;
+//       font-weight: 550;
+//   }
+// }
+

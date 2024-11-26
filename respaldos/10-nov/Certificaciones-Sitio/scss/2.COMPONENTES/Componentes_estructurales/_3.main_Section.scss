@@ -1,0 +1,30 @@
+
+.main {
+    /* background-color:aqua; */
+    margin: 2.5rem 0;
+    padding: 0 0.5rem;
+
+    /*en su condición de parent de sectiones*/
+    flex-direction: column;
+
+    /*En su condición de Child de Grilla*/
+    justify-self: center;
+}
+
+/** Secciones **/
+.main_Sec {
+    width: 70%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.2rem 0.75rem
+}
+
+.main_Sec_DivH--h2{
+    color: #FC9A53;
+    padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
+}
+
+//*********************************** FIN DE COMPONENTES ESTRUCTURALES ****************************************

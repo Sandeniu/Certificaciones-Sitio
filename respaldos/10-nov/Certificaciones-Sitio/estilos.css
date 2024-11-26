@@ -1,0 +1,548 @@
+/*ROBOTO >>> font-family:'Roboto', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2? family = Roboto: ital, wght @ 0,100; 0,300; 0,400; 0,500; 0,700; 0,900; 1,100; 1,300; 1,400; 1,500; 1,700; 1,900 & display = swap');
+/*Montserrat >>> font-family: 'Montserrat', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2? familia = Montserrat: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 0,800; 0,900; 1,100; 1,200; 1,300; 1,400; 1,500; 1,600; 1,700; 1,800; 1,900 & display = swap');
+/* font-family: "Albert Sans", sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/********************************* Estilos Generales ****************************************************/
+
+* {
+    outline: 1px solid red;  /* Colorcito de bordes para detectar desbordes */
+    outline: none;             /* Esta línea sobrescribe a la línea anterior */
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;     /* Quitar viñetas de las listas */
+    border: none;              /* Quitar subrayado de los enlaces */
+    box-sizing: border-box;    /* incluir relleno y borde por defecto en medidas de elementos */
+    max-width: 100%;           /* limita el contenido a no ocupar más allá del 100% */
+}
+
+html {
+
+    /*1rem tendra el tamaño de 10px */
+
+    /* Explicación: */
+
+    /*    1) fonsize por default de html = 16px */
+    /*        pero queremos establecerlo en 10px */
+    /*    2) para ello se realiza el cálculo (10/16) = 0.625 */
+    /*    3) 10px es un 62.5% del font-size por default */
+    /*    4) Así que establecemos el fonts size en 62.5x */
+    /*    5) Por lo tanto 1rem ahora será 10px */
+
+    font-size: 62.5%;
+}
+
+body{
+    /* color: #FC9A53; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+
+    min-height: 100%; /* Asegura que body ocupe toda la altura disponible */
+    font-size: 1.3rem;
+    font-family: "Albert Sans", sans-serif;
+    text-transform: uppercase;
+
+}
+
+
+/* Div Post-body, Contenedor que envuelve todo el contenido */
+.divBody {
+    flex-grow: 1; /* Esto hará que el divBody ocupe todo el espacio disponible */
+    min-width: 64%;
+
+    /************* Gestión de Layout como Padre de contenedore de la página************/
+    display: grid;
+    grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "main main main main"
+    "main main main main"
+    "main main main main"
+    "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+
+    /* grid-template-rows: auto; */
+    grid-template-rows: auto 1fr auto; /* Ajusta el tamaño del main dinámicamente */
+    
+    border-radius: 5px;
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.grilla-Sector-1 {
+    grid-area: header;
+}
+
+.grilla-Sector-2 {
+    grid-area: nav;
+}
+
+.grilla-Sector-3 {
+    grid-area: main;
+}
+
+.grilla-Sector-4 {
+    grid-area: footer;
+}
+
+/********************************* Fin Estilos Generales *********************************************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Estilos de la tabla */
+table {
+    border-collapse: collapse;
+    text-transform: none;
+
+    /*celdas se ajustan al contenido */
+    table-layout: auto;
+
+    /* tabla se ajusta a su contenido */
+    width: auto;
+}
+
+tr {
+    border-bottom: 0.1rem solid rgb(150, 150, 150);
+}
+
+th,
+td {
+    min-width: 5rem;
+    max-width: 20rem;
+    padding: 0.8rem;
+    padding-right: 3rem;
+
+    /* Ajusta el texto para evitar desbordes */
+    word-wrap: break-word;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8rem; /* interlineado */
+    
+    background-color: rgba(249, 224, 206, 0.1) !important;
+}
+
+td:last-child,
+th:last-child {
+    padding-right: 0;
+    /* Elimina el espacio en la última celda para que no haya un espacio extra al final */
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    height: 8rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header_DivTitulo{
+    margin: auto 0; /* Esto aplicará margen automático arriba y abajo */
+}
+
+hr {
+    background-color: #62BBC1;
+    border: none;
+    height: 1rem;
+    /* Asegura que ocupe todo el ancho*/
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.8;
+}
+
+/********************************* Menú Nav *********************************************/
+
+.nav {
+    align-items: center;
+    background: #C66082;
+    /* padding: 5px 10px; */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.nav-menu li {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.nav-menu li a {
+    /* width: 100%; */
+    text-decoration: none;
+    color: white;
+    padding: .5rem;
+}
+
+
+.nav-menu li a:hover {
+    font-family: 'Roboto';
+    background-color: #eb93b0;
+    color: #27272b;
+    opacity: 0.7;
+}
+
+
+/* Elemento <a> */
+.escalar {
+    padding: .5rem;
+    display: inline-block;              /* Para asegurarse de que el elemento se pueda escalar*/
+    transition: transform 0.3s ease;    /* Para que el cambio sea suave */
+}
+
+
+.escalar:hover {
+    transform: scale(1.03);              /* Escala el elemento al 120% de su tamaño original */
+}
+
+
+
+ /* Button dentro del ul */
+.hamburger {
+    display: none;
+    font-size: 2.1rem; /*Tamaño del botón*/
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0 2rem;
+}
+
+/********************************* Fin Menú Nav *********************************************/
+
+/********************************* Elementos Rutilizables *********************************************/
+
+
+.main {
+    /* background-color:aqua; */
+    margin: 2.5rem 0;
+    padding: 0 0.5rem;
+
+    /*en su condición de parent de sectiones*/
+    flex-direction: column;
+
+    /*En su condición de Child de Grilla*/
+    justify-self: center;
+}
+
+/** Secciones **/
+.main_Sec {
+    width: 70%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.2rem 0.75rem
+}
+
+/** Div acordión **/
+.Dacordion {
+    width: 100%;
+}
+
+.main_Sec_DivH--h2{
+    color: #FC9A53;
+    padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
+}
+
+.Dacordion_DItem_h2{
+    font-family: "Albert Sans", sans-serif;
+}
+
+.Dacordion_DItem_h2--button {
+    font-size: 1.5rem;
+    font-family: "Albert Sans", sans-serif;
+    padding: 1rem;
+}
+
+.Dacordion_DItem_Dstart--Dcontent {
+    background-color: rgba(249, 224, 206, 0.1);
+    padding: 0.7rem;
+}
+
+
+.img_lupa {
+    width: 2.2rem;
+    height: 2.2rem;
+    /* background-color: rgba(249, 224, 206, 0.1); */
+    background: transparent;
+    
+}
+
+.footer {
+    background-color: #3D3A4B;
+    color: #F9E0CE;
+    width: 100%;
+    min-height: 4rem;
+    padding: 1.5rem;
+}
+
+.footer_p {
+    text-align: center;
+    margin: 0;
+}
+
+.footer_p_spa {
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: none;
+}
+
+
+/********************************************/
+/*       R  E  S  P  O  N  S  I  V  E       */
+/*          BREACKPOINT  DE BOOSTRAP        */
+/********************************************/
+
+
+
+/******    (1)     DISPOSITIVO XS ETRA-SMALL    *********/
+
+@media only screen and (min-width: 200px) and (max-width: 576px){
+
+    body{
+        min-height: 100%;
+    }
+
+    .divBody{
+        border-radius: none;
+        box-shadow: none;
+        min-width: 100%;
+    }
+
+    header {
+        height: 6rem;
+    }
+
+    .main {
+        margin: 1rem 0;
+    }
+
+    .main_Sec {
+        width: 80%;
+    }
+
+    /* .main_Sec_DivH--h2{
+        font-size: 1.5rem;
+    }
+} */
+
+}
+
+
+/*******    (2)  DISPOSITIVO SM SMALL        *********/
+@media only screen and (min-width: 200px) and (max-width: 576px){
+}
+
+/********     (3)   DISPOSITIVO MD MEDIANO      *********/
+@media only screen and (min-width: 577px) and (max-width: 768px){ 
+}
+
+/*******     (4)   DISPOSITIVO LG LARGE      ********/
+@media only screen and (min-width: 769px) and (max-width: 992px){ 
+}
+
+/*******    (5)   DISPOSITIVO XL EXTRA-LARGE      ********/
+@media only screen and (min-width: 993px) and (max-width: 1200px){
+}
+
+/********  (6)   DISPOSITIVO XXL EXTRA/EXTRA-LARGE     *******/
+@media only screen and (min-width: 1201px) and (max-width: 1400px){
+}
+
+
+
+
+
+
+@media only screen and (min-width: 200px) and (max-width: 1000px){
+     
+    /**** MENÚ HAMBURGUESA */
+    .nav {
+        justify-content: end;
+        line-height: normal;
+    }
+
+    .nav-container {
+        justify-content: end;
+        padding-right: 1rem;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+
+        top: 2.5rem;
+        right: 1.3rem;
+        width: 25%;
+
+        background-color: white;
+
+        border-radius: 10px;
+        align-items: normal;
+    }
+
+    .nav-menu li {
+        text-align: right;
+        padding: 1rem;
+
+        /* Borde con transparencia */
+        border: 1px solid rgba(0, 0, 0, 0.1); 
+
+        /* Difuminado leve de bordes*/ 
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);    
+        
+        /*Se eliminan los bordes superiores de las celdas ya que si se usan 
+        ambos, estos se acoplan y se ven horribles, como líneas torcidas */
+        border-top: none;
+    }
+
+
+    /*se pone borde superior sólo al 1er elemento para cerrar la caja contenedora*/
+     .nav-menu li:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.1); 
+    }
+
+    .nav-menu li:hover {
+        background-color: #27272b;
+        border-radius: 10px;
+    }
+
+
+    .nav-menu li a {
+        color: #27272b;
+        font-family: 'Roboto';
+    }
+
+
+    .nav-menu li a:hover {
+        background-color: transparent;
+        color: white;
+    }
+
+    /* Button dentro del ul */
+    .hamburger {
+        display: block;
+        padding: 0 .5rem;
+        padding-bottom: .25rem;
+    }
+
+    /* elemento ul- muestra el menú cuando se hace click en la hamburguesa */
+    .show {
+        display: flex !important;
+    }
+
+
+    /***************************** FIN MENÚ HAMBURGUESA *******************************/
+
+    /********************* Covertir tabla horizontal en vertical **********************/
+
+     .table {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Hacemos que los encabezados sean una "columna" flexible */
+    .table thead {
+        display: none;
+        flex-direction: column;
+    }
+
+    /* Las filas de <tbody> también serán flexibles, con una "columna" flexible para cada celda */
+    .table tbody {
+        display: flex;
+        flex-direction: column;
+    }
+	
+    .table tbody tr {
+        display: flex;
+        flex-direction: column;
+
+        border: 1px solid #ddd;
+        border-bottom: 0.1px solid rgba(61, 58, 75, 0.1);
+    }
+
+    /* Aseguramos que las celdas se apilen verticalmente */
+    .table tbody td {
+        display: block;
+
+        /* Permite que la celda ocupe todo el ancho del tr */
+        min-width: 100%;
+
+        /* Evitar superposición de contenido largo */
+        text-align: left;
+        word-wrap: break-word;
+
+        background: rgba(250, 234, 214, 0.5) !important;
+        border-bottom: 1px solid #ddd;
+    }
+	
+    /* Añadimos un salto de línea con contenido */
+    .table tbody td::before {
+        content: attr(data-label);
+        display: block;
+        /* genera un salto de línea*/
+        font-weight: bold;
+        margin-bottom: px;
+        /* Espacio entre el encabezado y el contenido */
+    }
+
+    /******************** Fin Covertir tabla horizontal en vertical ***************************/
+    /************** Otros elementos para ajustar tabla en formato vertical ********************/
+    
+    
+    /* Para que la tabla ocupe todo el el ancho del acordión */
+
+    .Dacordion_DItem_Dstart--Dcontent{
+
+        /* Permitir que las celdas crezcan */
+        flex-grow: 1; 
+
+       /* Base de tamaño de 0 para permitir crecimiento flexible */
+       flex-basis: 0; 
+
+    }
+}
+
+
+

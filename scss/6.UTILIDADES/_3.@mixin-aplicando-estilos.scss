@@ -1,0 +1,23 @@
+
+
+@import "./2.map-estilos_dinamicos";
+//no requiere el partial donde se encuentran los breapoints
+
+// 3. Mixin Dinámico para Aplicar Estilos con Breakpoints
+
+@mixin apply-styles($breakpoint) {
+  @each $selector, $properties in $styles {
+    #{$selector} {
+      @each $property, $value in $properties {
+        // Verifica si el valor es un mapa (para múltiples *breakpoints*)
+        @if type-of($value) == "map" {
+          @if map-has-key($value, $breakpoint) {
+            #{$property}: map-get($value, $breakpoint);
+          }
+        } @else {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+}

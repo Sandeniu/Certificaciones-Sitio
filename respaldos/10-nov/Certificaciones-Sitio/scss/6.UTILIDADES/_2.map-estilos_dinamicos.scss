@@ -1,0 +1,188 @@
+
+
+//Se define styles.scss sin dependencias adicionales
+
+// 2. Mapa para definir Estilos Dinámicos
+$styles: (
+  "body": (
+    "min-height": 100%,
+  ),
+".divBody": (
+  "width": (
+      "xs": 100%,
+      "sm": 100%
+  )
+),
+  "header": (
+    "height": (
+      "xs": 6rem,
+      "sm": 6rem,
+      "md": 7rem
+    )
+  ),
+  "h1": (
+    "font-size": (
+    "xs": 1.8rem
+    )
+  ),
+  ".main": (
+    "margin": (
+      "xs": 1rem 0,
+      "sm": 1rem 0,
+      "md": 1.5rem 0
+    )
+  ),
+  ".main_Sec": (
+    "width": (
+      "xs":95%,
+      "sm": 90%,
+      "md": 85%
+    )
+  ),
+  ".main_Sec_DivH--h2": (
+    "font-size": (
+      "xs": 1.4rem
+    )
+  ),
+  ".nav": (
+    "justify-content": (
+      "xs": end,
+      "sm": end,
+      "md": end
+    ),
+    "line-height": (
+      "xs": normal,
+      "sm": normal,
+      "md": normal
+    )
+  ),
+  ".nav-container": (
+    "flex-direction": (
+      "xs": column,
+      "sm": column,
+      "md": column 
+    ),
+    "align-items": (
+      "xs": flex-end,
+      "sm": flex-end,
+      "md": flex-end 
+    )
+  ),
+  ".nav-menu": (
+    "display": (
+      "xs": none,
+      "sm": none,
+      "md": none
+    ),
+    "flex-direction": (
+      "xs": column,
+      "sm": column,
+      "md": column
+    ),
+    "align-items": (
+      "xs": normal,
+      "sm": normal,
+      "md": normal
+    ),
+    "padding": (
+      "xs": 0 1rem .8rem 1rem,
+      "sm": 0 1rem .8rem 1rem,
+      "md": 0 1rem .8rem 1rem
+    ),
+    "border-radius": (
+      "xs": 10px,
+      "sm": 10px,
+      "md": 10px
+    ),
+    "list-style": none,
+    "margin": 0
+  ),
+  ".nav-menu li": (
+    "text-align": (
+      "xs": right,
+      "sm": right,
+      "md": right
+    ),
+    "background-color": (
+      "xs": #c66082,
+      "sm": #c66082,
+      "md": #c66082
+    ),
+    "padding":(
+      "xs": .25rem,
+      "sm": .25rem,
+      "md": .25rem
+    ),
+    "margin": 0,
+  ), 
+  ".nav-menu li a": (
+    "font-size": (
+      "xs": 1.1rem,
+    ),
+    "color": (
+      "xs": #ffffff,
+      "sm": #ffffff,
+      "md": #ffffff
+    )
+  ),
+  ".nav-menu li a:hover": (
+    "width": (
+      "xs": 100%,
+      "sm": 100%,
+      "md": 100%
+    )
+  ),
+  ".hamburger": (
+    "display": (
+      "xs": inline-block,
+      "sm": inline-block,
+      "md": inline-block
+    ),
+    "padding": (
+      "xs": 0.5rem 2rem,
+      "sm": 0.5rem 2rem,
+      "md": 0.5rem 2rem
+    )
+    ), 
+    ".show": (
+      "display": (
+        "xs": flex,
+        "sm": flex,
+        "md": flex
+      )
+  ),
+  ".table": (
+    "display": (
+      "xs": flex,
+      "sm": flex,
+      "md": flex
+    ),
+    "flex-direction": (
+      "xs": column,
+      "sm": column,
+      "md": column
+    )
+  ),
+  ".table tbody tr": (
+    "display": (
+      "xs": flex, 
+      "sm": flex, 
+      "md": flex
+    ),
+    "flex-direction": (
+      "xs": column,
+      "sm": column,
+      "md": column
+    ),
+    "border": (
+      "xs": 1px solid #ddd,
+      "sm": 1px solid #ddd,
+      "md": 1px solid #ddd
+    ),
+    "border-bottom": (
+      "xs": 0.1px solid rgba(61, 58, 75, 0.1),
+      "sm": 0.1px solid rgba(61, 58, 75, 0.1),
+      "md": 0.1px solid rgba(61, 58, 75, 0.1)
+    )
+  )  
+)

@@ -1,0 +1,20 @@
+
+@import "./scss/6.UTILIDADES/variables";
+
+@import "./scss/1.BASE/tipografias";
+@import "./scss/1.BASE/reset";
+@import "./scss/1.BASE/layout";
+
+@import "./scss/2.COMPONENTES/elementos_generales.scss";
+@import "./scss/2.COMPONENTES/Accesorios/1.Lupa";
+@import "./scss/3.PROVEEDORES/bs-acordion-button"; 
+
+@import "./scss/2.COMPONENTES/Componentes_estructurales/1.header";
+@import "./scss/2.COMPONENTES/Componentes_estructurales/2.nav";
+@import "./scss/2.COMPONENTES/Componentes_estructurales/3.main_Section";
+@import "./scss/2.COMPONENTES/Componentes_estructurales/4.footer";
+
+@import "./scss/6.UTILIDADES/1.map-breakpoints";
+@import "./scss/6.UTILIDADES/2.map-estilos_dinamicos";
+@import "./scss/6.UTILIDADES/3.@mixin-aplicando-estilos";
+@import "./scss/6.UTILIDADES/4.@each-$responsive";

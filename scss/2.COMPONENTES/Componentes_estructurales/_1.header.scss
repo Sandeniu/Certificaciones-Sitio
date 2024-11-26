@@ -1,0 +1,22 @@
+
+.header {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 8rem;
+    padding: 0;
+}
+
+.header_DivTitulo{
+    margin: auto 0; /* Esto aplicará margen automático arriba y abajo */
+}
+
+.header_hr {
+    background-color: #62BBC1;
+    border: none;
+    height: 1rem;
+    /* Asegura que ocupe todo el ancho*/
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.8;
+}

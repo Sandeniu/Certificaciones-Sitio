@@ -1,0 +1,246 @@
+/********************************* Estilos Generales ****************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************* Fin Estilos Generales *********************************************/
+
+
+
+
+/********************************* Menú Nav *********************************************/
+
+.
+/********************************* Fin Menú Nav *********************************************/
+
+/********************************* Elementos Rutilizables *********************************************/
+
+
+
+
+
+
+
+
+/********************************************/
+/*       R  E  S  P  O  N  S  I  V  E       */
+/*          BREACKPOINT  DE BOOSTRAP        */
+/********************************************/
+
+
+
+/******    (1)     DISPOSITIVO XS ETRA-SMALL    *********/
+
+@media only screen and (min-width: 200px) and (max-width: 576px) {
+
+    body {
+        min-height: 100%;
+    }
+
+    .divBody {
+        border-radius: none;
+        box-shadow: none;
+        min-width: 100%;
+    }
+
+    header {
+        height: 6rem;
+    }
+
+    .main {
+        margin: 1rem 0;
+    }
+
+    .main_Sec {
+        width: 80%;
+    }
+
+    /* .main_Sec_DivH--h2{
+        font-size: 1.5rem;
+    }
+} */
+
+}
+
+
+/*******    (2)  DISPOSITIVO SM SMALL        *********/
+@media only screen and (min-width: 200px) and (max-width: 576px) {}
+
+/********     (3)   DISPOSITIVO MD MEDIANO      *********/
+@media only screen and (min-width: 577px) and (max-width: 768px) {}
+
+/*******     (4)   DISPOSITIVO LG LARGE      ********/
+@media only screen and (min-width: 769px) and (max-width: 992px) {}
+
+/*******    (5)   DISPOSITIVO XL EXTRA-LARGE      ********/
+@media only screen and (min-width: 993px) and (max-width: 1200px) {}
+
+/********  (6)   DISPOSITIVO XXL EXTRA/EXTRA-LARGE     *******/
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {}
+
+
+
+
+
+
+@media only screen and (min-width: 200px) and (max-width: 1000px) {
+
+    /**** MENÚ HAMBURGUESA */
+    .nav {
+        justify-content: end;
+        line-height: normal;
+    }
+
+    .nav-container {
+        justify-content: end;
+        padding-right: 1rem;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+
+        top: 2.5rem;
+        right: 1.3rem;
+        width: 25%;
+
+        background-color: white;
+
+        border-radius: 10px;
+        align-items: normal;;
+    }
+
+    .nav-menu li {
+        text-align: right;
+        padding: 1rem;
+
+        /* Borde con transparencia */
+        border: 1px solid rgba(0, 0, 0, 0.1);
+
+        /* Difuminado leve de bordes*/
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+        /*Se eliminan los bordes superiores de las celdas ya que si se usan 
+        ambos, estos se acoplan y se ven horribles, como líneas torcidas */
+        border-top: none;
+    }
+
+
+    /*se pone borde superior sólo al 1er elemento para cerrar la caja contenedora*/
+    .nav-menu li:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu li:hover {
+        background-color: #27272b;
+        border-radius: 10px;
+    }
+
+
+    .nav-menu li a {
+        color: #27272b;
+        font-family: 'Roboto';
+    }
+
+
+    .nav-menu li a:hover {
+        background-color: transparent;
+        color: white;
+    }
+
+    /* Button dentro del ul */
+    .hamburger {
+        display: block;
+        padding: 0 .5rem;
+        padding-bottom: .25rem;
+    }
+
+    /* elemento ul- muestra el menú cuando se hace click en la hamburguesa */
+    .show {
+        display: flex !important;
+    }
+
+
+    /***************************** FIN MENÚ HAMBURGUESA *******************************/
+
+    /********************* Covertir tabla horizontal en vertical **********************/
+
+    .table {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Hacemos que los encabezados sean una "columna" flexible */
+    .table thead {
+        display: none;
+        flex-direction: column;
+    }
+
+    /* Las filas de <tbody> también serán flexibles, con una "columna" flexible para cada celda */
+    .table tbody {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table tbody tr {
+        display: flex;
+        flex-direction: column;
+
+        border: 1px solid #ddd;
+        border-bottom: 0.1px solid rgba(61, 58, 75, 0.1);
+    }
+
+    /* Aseguramos que las celdas se apilen verticalmente */
+    .table tbody td {
+        display: block;
+
+        /* Permite que la celda ocupe todo el ancho del tr */
+        min-width: 100%;
+
+        /* Evitar superposición de contenido largo */
+        text-align: left;
+        word-wrap: break-word;
+
+        background: rgba(250, 234, 214, 0.5) !important;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Añadimos un salto de línea con contenido */
+    .table tbody td::before {
+        content: attr(data-label);
+        display: block;
+        /* genera un salto de línea*/
+        font-weight: bold;
+        margin-bottom: px;
+        /* Espacio entre el encabezado y el contenido */
+    }
+
+    /******************** Fin Covertir tabla horizontal en vertical ***************************/
+    /************ Otros elementos para ajustar tabla en formato vertical ********************/
+
+
+    /* Para que la tabla ocupe todo el el ancho del acordión */
+
+    .Dacordion_DItem_Dstart--Dcontent {
+
+        /* Permitir que las celdas crezcan */
+        flex-grow: 1;
+
+        /* Base de tamaño de 0 para permitir crecimiento flexible */
+        flex-basis: 0;
+
+    }
+}
