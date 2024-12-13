@@ -225,7 +225,7 @@ const colection_tablas = {
     }
 };
 
-// Función para crear enlace con imagen en una celda
+// Función para crear enlace con imagen en una celda (la imagen es la lupa)
 function crearLinkCelda(url) {
     const enlace = document.createElement("a");
     enlace.href = url;
